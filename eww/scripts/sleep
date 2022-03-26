@@ -1,3 +1,0 @@
-#! /bin/sh
-
-eww open power_menu && sleep 3s && eww close power_menu
