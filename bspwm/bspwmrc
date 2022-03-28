@@ -23,4 +23,4 @@ bspc config presel_feedback_color "#fc5d7c"
 #bspc rule -a eww layer=below
 
 xsetroot -cursor_name left_ptr
-setxkbmap us -variant alt-intl
+setxkbmap us -variant intl
