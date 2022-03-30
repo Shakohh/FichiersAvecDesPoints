@@ -1,15 +1,27 @@
 * {
   all: unset; //Unsets everything so you can style everything from scratch
 }
-    $background: #2c2e34;
-    $white: #e2e2e3;
-    $black: #181819;
-    $red: #fc5d7c;
-    $green: #9ed072;
-    $yellow: #e7c664;
-    $blue: #76cce0;
-    $magenta: #b39df3;
-    $cyan: #f39660;
+
+//    OneDark Colors
+  $background: #282C34;
+  $red: #E06E75;
+  $green: #98C379;
+  $yellow: #E5C07B;
+  $blue: #61AFEF;
+  $magenta: #C678DD;
+  $cyan: #56B6C2;
+  $white: #ABB2BF;
+
+//    Sonokai Colors
+//  $background: #2c2e34;
+//  $white: #e2e2e3;
+//  $red: #fc5d7c;
+//  $green: #9ed072;
+//  $yellow: #e7c664;
+//  $blue: #76cce0;
+//  $magenta: #b39df3;
+//  $cyan: #f39660;
+
 
 .bar {
   background-color: $background;

@@ -27,7 +27,7 @@
 (defwidget menu []
   (button :class "menu"
     :halign "center"
-    :onclick "scripts/sleep"
+    :onclick "eww open power_menu"
     :onrightclick "eww close power_menu"
   "▣"))
 
@@ -40,7 +40,7 @@
   (button :class "power_menu_reboot"
   :onclick "shutdown -r now" "⏼")
   (button :class "power_menu_logout"
-  :onclick "bspc quit" "⏾")))
+  :onclick "kill 16448" "⏾")))
 
 (defwidget workspaces []
   (box :orientation "h"
@@ -83,7 +83,7 @@
     :space-evenly false
     :halign "start"
     :spacing 1
-    (button :onclick "bspc desktop -f '^2'" "▣")))
+    (button :onclick "berryc switch_workspace 1" "▣")))
 
 (defwidget workspace2 []
   (box :class "workspaces"
@@ -91,7 +91,7 @@
     :space-evenly false
     :halign "start"
     :spacing 1
-    (button :onclick "bspc desktop -f '^3'" "□")))
+    (button :onclick "berryc switch_workspace 2" "□")))
 
 (defwidget workspace3 []
   (box :class "workspaces"
@@ -99,7 +99,7 @@
     :space-evenly false
     :halign "start"
     :spacing 1
-    (button :onclick "bspc desktop -f '^4'" "□")))
+    (button :onclick "berryc switch_workspace 3" "□")))
 
 (defwidget workspace4 []
   (box :class "workspaces"
@@ -107,7 +107,7 @@
     :space-evenly false
     :halign "start"
     :spacing 10
-    (button :onclick "bspc desktop -f '^5'" "□")))
+    (button :onclick "berryc switch_workspace 4" "□")))
 
 (defwidget workspace5 []
   (box :class "workspaces"
@@ -115,7 +115,7 @@
     :space-evenly false
     :halign "start"
     :spacing 10
-    (button :onclick "bspc desktop -f '^6'" "□")))
+    (button :onclick "berryc switch_workspace 5" "□")))
 
 (defwidget workspace6 []
   (box :class "workspaces"
@@ -123,7 +123,7 @@
     :space-evenly false
     :halign "start"
     :spacing 10
-    (button :onclick "bspc desktop -f '^7'" "□")))
+    (button :onclick "berryc switch_workspace 6" "□")))
 
 (defwindow workspaces
   :monitor 0
@@ -168,3 +168,4 @@
     :height "32px"
   :anchor "top right")
   (power_menu))
+
