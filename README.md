@@ -1,3 +1,3 @@
-# Mes fichiers avec des points au début parce que ça les cache sur GNU/Linux mais là en l'occurrence y'a pas de fichiers avec des points, mais c'est les dossiers et les fichiers que tu mets dans le dossier ".config" du dossier maison de ton utilisateur, c'est là que se trouve les fichiers de configuration du coup... d'où le nom du dossier... après si tu savais pas c'est ok.
+# Mes fichiers avec des points
 
-Du coup y'a une barre... et elle fonctionne qu'a moitié... et y'a aussi les fichiers pour bspwm et pour sxhkd mais j'ai presque rien modifié, en plus bspwm c'est pas trop maintenu donc bon... fin' après y'a picom mais lui il est pepege c'est juste une backup :/
+Dépôt de mes fichiers avec des points quand je distro hop 💀💀💀💀
