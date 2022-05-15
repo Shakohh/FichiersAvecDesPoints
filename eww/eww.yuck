@@ -1,0 +1,171 @@
+(defpoll time :interval "10s"
+"date '+%H:%M'")
+
+(defpoll date :interval "10s"
+"date '+%A %d %B %Y'")
+
+(deflisten current_desktop :initial "rien"
+  `xprop -root -spy _NET_CURRENT_DESKTOP`)
+
+(defwidget blank []
+  (box :class "blank"
+    :orientation "h"
+  :space-evenly false))
+
+(defwidget time []
+  (box :class "time"
+    :orientation "h"
+    :space-evenly false
+  time))
+
+(defwidget date []
+  (box :class "date"
+    :orientation "h"
+    :space-evenly false
+  date))
+
+(defwidget menu []
+  (button :class "menu"
+    :halign "center"
+    :onclick "eww open power_menu"
+    :onrightclick "eww close power_menu"
+  "▣"))
+
+(defwidget power_menu []
+  (box :class "power_menu"
+    :orientation "v"
+  :space-evenly false
+  (button :class "power_menu_power"
+  :onclick "shutdown -h now" "⏻")
+  (button :class "power_menu_reboot"
+  :onclick "shutdown -r now" "⏼")
+  (button :class "power_menu_logout"
+  :onclick "kill 16448" "⏾")))
+
+(defwidget workspaces []
+  (box :orientation "h"
+    :spacing 2
+    :space-evenly true
+    (date)))
+
+(defwidget bar []
+  (centerbox :orientation "h"
+    (blank)
+    (time)
+    (blank)))
+
+(defwindow bar
+  :monitor 0
+  :windowtype "dock"
+  :geometry (geometry
+    :x "0px"
+    :y "8px"
+    :width "1900px"
+    :height "30px"
+  :anchor "top center")
+  :reserve (struts :side "top" :distance "38px")
+  (bar))
+
+(defwidget workspaces []
+  (box :orientation "h"
+    :spacing 2
+    :space-evenly true
+    (workspace1)
+    (workspace2)
+    (workspace3)
+    (workspace4)
+    (workspace5)
+    (workspace6)))
+
+(defwidget workspace1 []
+  (box :class "workspaces"
+    :orientation "h"
+    :space-evenly false
+    :halign "start"
+    :spacing 1
+    (button :onclick "berryc switch_workspace 1" "▣")))
+
+(defwidget workspace2 []
+  (box :class "workspaces"
+    :orientation "h"
+    :space-evenly false
+    :halign "start"
+    :spacing 1
+    (button :onclick "berryc switch_workspace 2" "□")))
+
+(defwidget workspace3 []
+  (box :class "workspaces"
+    :orientation "h"
+    :space-evenly false
+    :halign "start"
+    :spacing 1
+    (button :onclick "berryc switch_workspace 3" "□")))
+
+(defwidget workspace4 []
+  (box :class "workspaces"
+    :orientation "h"
+    :space-evenly false
+    :halign "start"
+    :spacing 10
+    (button :onclick "berryc switch_workspace 4" "□")))
+
+(defwidget workspace5 []
+  (box :class "workspaces"
+    :orientation "h"
+    :space-evenly false
+    :halign "start"
+    :spacing 10
+    (button :onclick "berryc switch_workspace 5" "□")))
+
+(defwidget workspace6 []
+  (box :class "workspaces"
+    :orientation "h"
+    :space-evenly false
+    :halign "start"
+    :spacing 10
+    (button :onclick "berryc switch_workspace 6" "□")))
+
+(defwindow workspaces
+  :monitor 0
+  :windowtype "dock"
+  :geometry (geometry
+    :x "16px"
+    :y "7px"
+    :width "35px"
+    :height "32px"
+  :anchor "top left")
+  (workspaces))
+
+(defwindow date
+  :monitor 0
+  :windowtype "dock"
+  :geometry (geometry
+    :x "-57px"
+    :y "7px"
+    :width "35px"
+    :height "32px"
+  :anchor "top right")
+  (date))
+
+(defwindow menu
+  :monitor 0
+  :windowtype "dock"
+  :geometry (geometry
+    :x "-16px"
+    :y "7px"
+    :width "32px"
+    :height "32px"
+  :anchor "top right")
+  (menu))
+
+(defwindow power_menu
+  :monitor 0
+  :windowtype "dock"
+  :geometry (geometry
+    :x "-16px"
+    :y "44px"
+    :width "32px"
+    :height "32px"
+  :anchor "top right")
+  (power_menu))
+

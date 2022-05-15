@@ -1,0 +1,84 @@
+configuration {
+    modi: "drun";
+    display-drun: "";
+    drun-display-format: "{name}";
+    font: "Lexend 10";
+    show-icons: true;
+    icon-theme: "Reversal-dark";
+}
+
+* {
+    bg: #2a2f38;
+    fg: #e1e3e4;
+    alt: #3d4455;
+    red: #ff6578;
+    rad: 0px;
+
+    background-color: @bg;
+    text-color: @fg;
+}
+
+window {
+    location: center;
+    anchor:   center;
+    transparency: "screenshot";
+    opacity: 50;
+    padding: 6px;
+    border: 2px;
+    border-radius: @rad;
+    border-color: @red;
+    spacing: 0;
+    children:  [mainbox];
+    orientation: horizontal;
+}
+
+mainbox {
+    children: [ inputbar, listview ];    
+    padding: 1em;
+    spacing: 1em;
+}
+
+
+inputbar {
+    children: [ prompt, entry ];
+    border-radius: @rad;
+    background-color: @alt;
+}
+
+prompt, entry, element selected {
+    vertical-align: 0.5;
+    background-color: @alt;
+}
+
+prompt {
+   padding: 1.5%;
+   font: "Lexend 10";
+}
+
+entry {
+    blink: false;
+    padding: 0 1.5% 0 0;
+    placeholder: "Rechercher des applications...";
+}
+
+listview {
+    lines: 4;
+    columns: 6;
+    cycle: false;
+}
+
+element {
+    orientation: vertical;
+    padding: 1em;
+    border-radius: @rad;
+}
+
+element-text, element-icon {
+    horizontal-align: 0.5;
+    background-color: inherit;
+}
+
+element-icon { size: 48px; }
+listview, element, element selected, element-text, element-icon { cursor: pointer; }
+entry { cursor: text; }
+
